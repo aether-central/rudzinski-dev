@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Michał Rudziński | Senior Dynamics 365 Business Central Developer</title>
+    <meta name="description" content="Senior Microsoft Dynamics 365 Business Central Developer specializing in AL, C/AL, system migrations, customizations, workflow automation and API integrations. Professional portfolio.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@500;600&display=swap');
+        
+        :root {
+            --primary: #0A2540;
+            --accent: #00B4D8;
+        }
+        
+        body {
+            font-family: 'Inter', system_ui, sans-serif;
+        }
+        
+        .heading-font {
+            font-family: 'Space Grotesk', 'Inter', sans-serif;
+            font-weight: 600;
+            letter-spacing: -0.025em;
+        }
+
+        .nav-link {
+            transition: color 0.2s ease;
+        }
+        .nav-link:hover {
+            color: #00B4D8;
+        }
+
+        .section-header {
+            position: relative;
+            display: inline-block;
+        }
+        .section-header:after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(to right, #00B4D8, #0077B6);
+            border-radius: 3px;
+        }
+
+        .skill-badge {
+            transition: all 0.2s ease;
+        }
+        .skill-badge:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+        }
+
+        .service-card, .experience-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .service-card:hover, .experience-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, #00B4D8, #0077B6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-bg {
+            background: linear-gradient(135deg, #0A2540 0%, #1a365d 100%);
+        }
+
+        .modern-shadow {
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+    <!-- Navbar -->
+    <nav class="bg-white border-b border-slate-200 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex items-center gap-x-3">
+                    <div class="w-11 h-11 bg-[#0A2540] rounded-2xl flex items-center justify-center shadow-inner">
+                        <span class="text-white text-3xl font-bold tracking-tighter">MR</span>
+                    </div>
+                    <div>
+                        <span class="font-semibold text-2xl tracking-tight">Michał Rudziński</span>
+                    </div>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center gap-x-9 text-sm font-medium">
+                    <a href="#about" class="nav-link text-slate-600 hover:text-slate-900">About</a>
+                    <a href="#skills" class="nav-link text-slate-600 hover:text-slate-900">Skills</a>
+                    <a href="#experience" class="nav-link text-slate-600 hover:text-slate-900">Experience</a>
+                    <a href="#services" class="nav-link text-slate-600 hover:text-slate-900">Services</a>
+                </div>
+
+                <div class="hidden md:flex items-center gap-x-4">
+                    <a href="#contact" 
+                       class="px-5 py-2.5 text-sm font-semibold bg-[#0A2540] text-white rounded-2xl hover:bg-[#1a365d] transition-colors flex items-center gap-x-2">
+                        <i class="fa-solid fa-envelope"></i>
+                        <span>Get in touch</span>
+                    </a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <button id="mobile-menu-btn"
+                        class="md:hidden w-11 h-11 flex items-center justify-center text-slate-600 hover:text-slate-900">
+                    <i class="fa-solid fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden border-t bg-white">
+            <div class="px-6 py-6 flex flex-col gap-y-4 text-sm font-medium">
+                <a href="#about" class="py-2 text-slate-600">About</a>
+                <a href="#skills" class="py-2 text-slate-600">Skills</a>
+                <a href="#experience" class="py-2 text-slate-600">Experience</a>
+                <a href="#services" class="py-2 text-slate-600">Services</a>
+                <a href="#contact" class="mt-2 px-5 py-3 bg-[#0A2540] text-white rounded-2xl text-center font-semibold">Get in touch</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-bg text-white">
+        <div class="max-w-5xl mx-auto px-6 pt-20 pb-24 text-center">
+            <div class="inline-flex items-center gap-x-2 bg-white/10 backdrop-blur-md px-4 py-1.5 rounded-3xl mb-6 border border-white/20">
+                <div class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></div>
+                <span class="text-sm font-medium tracking-wider">OPEN TO NEW OPPORTUNITIES</span>
+            </div>
+
+            <h1 class="text-6xl md:text-7xl font-semibold tracking-tighter heading-font mb-4">
+                Michał Rudziński
+            </h1>
+            <p class="text-2xl md:text-3xl text-[#00B4D8] font-medium tracking-tight mb-6">
+                Senior Microsoft Dynamics 365<br>Business Central Developer
+            </p>
+            
+            <p class="max-w-2xl mx-auto text-xl text-slate-300 mb-10">
+                5+ years building scalable ERP solutions. Expert in AL & C/AL, system migrations, 
+                custom development, workflow automation and seamless API integrations.
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#experience" 
+                   class="inline-flex items-center justify-center gap-x-3 px-8 py-4 bg-white text-[#0A2540] font-semibold rounded-3xl hover:bg-slate-100 transition-all text-lg">
+                    <span>View my work</span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+                <a href="#contact" 
+                   class="inline-flex items-center justify-center gap-x-3 px-8 py-4 border-2 border-white/70 hover:bg-white/10 font-semibold rounded-3xl transition-all text-lg">
+                    <span>Let's collaborate</span>
+                </a>
+            </div>
+
+            <div class="mt-16 flex justify-center gap-x-8 text-sm">
+                <div class="flex items-center gap-x-2 text-slate-400">
+                    <i class="fa-solid fa-map-marker-alt"></i>
+                    <span>Remote • Poland</span>
+                </div>
+                <div class="flex items-center gap-x-2 text-slate-400">
+                    <i class="fa-brands fa-linkedin"></i>
+                    <a href="#" class="hover:text-white transition-colors">LinkedIn</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="max-w-5xl mx-auto px-6 py-20">
+        <div class="grid md:grid-cols-12 gap-x-12 items-center">
+            <div class="md:col-span-5 mb-10 md:mb-0">
+                <div class="sticky top-24">
+                    <h2 class="text-5xl font-semibold tracking-tighter heading-font mb-6">About me</h2>
+                    <div class="prose prose-slate text-lg">
+                        <p class="text-slate-600">
+                            I'm a passionate and detail-oriented developer with deep expertise in the Microsoft Dynamics ecosystem. 
+                            Over the last five years I've helped companies modernize their ERP landscapes, automate complex processes, 
+                            and build robust integrations that actually deliver business value.
+                        </p>
+                        <p class="text-slate-600 mt-4">
+                            I specialize in moving organizations from legacy NAV to the modern Business Central platform, 
+                            developing clean AL solutions, and creating reliable connections between BC and the rest of the tech stack.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="md:col-span-7">
+                <div class="bg-white rounded-3xl p-8 md:p-10 modern-shadow border border-slate-100">
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-8">
+                        <div>
+                            <div class="text-5xl font-semibold text-[#0A2540] tracking-tighter">5+</div>
+                            <div class="text-sm font-medium text-slate-500 mt-1">Years of experience</div>
+                        </div>
+                        <div>
+                            <div class="text-5xl font-semibold text-[#0A2540] tracking-tighter">100+</div>
+                            <div class="text-sm font-medium text-slate-500 mt-1">Customizations delivered</div>
+                        </div>
+                        <div>
+                            <div class="text-5xl font-semibold text-[#0A2540] tracking-tighter">20+</div>
+                            <div class="text-sm font-medium text-slate-500 mt-1">Successful migrations</div>
+                        </div>
+                    </div>
+
+                    <div class="mt-10 pt-8 border-t border-slate-100 text-sm text-slate-600">
+                        <p><strong>Currently open to:</strong> Senior/Lead BC Developer roles, contract projects, and long-term partnerships with companies that value clean code and real business outcomes.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="bg-white py-16 border-y border-slate-100">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-5xl font-semibold tracking-tighter heading-font">Technical Expertise</h2>
+                <p class="mt-3 text-xl text-slate-600 max-w-md mx-auto">Core technologies I work with every day</p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-3">
+                <!-- Core -->
+                <div class="skill-badge bg-slate-900 text-white px-5 py-4 rounded-3xl flex items-center gap-x-3">
+                    <i class="fa-solid fa-code text-[#00B4D8] text-xl w-6"></i>
+                    <div>
+                        <div class="font-semibold">AL / C/AL</div>
+                        <div class="text-xs text-slate-400">Business Central & NAV</div>
+                    </div>
+                </div>
+                <div class="skill-badge bg-slate-900 text-white px-5 py-4 rounded-3xl flex items-center gap-x-3">
+                    <i class="fa-solid fa-sync text-[#00B4D8] text-xl w-6"></i>
+                    <div>
+                        <div class="font-semibold">System Migrations</div>
+                        <div class="text-xs text-slate-400">NAV → Business Central</div>
+                    </div>
+                </div>
+                <div class="skill-badge bg-slate-900 text-white px-5 py-4 rounded-3xl flex items-center gap-x-3">
+                    <i class="fa-solid fa-plug text-[#00B4D8] text-xl w-6"></i>
+                    <div>
+                        <div class="font-semibold">API Development</div>
+                        <div class="text-xs text-slate-400">REST & integrations</div>
+                    </div>
+                </div>
+                <div class="skill-badge bg-slate-900 text-white px-5 py-4 rounded-3xl flex items-center gap-x-3">
+                    <i class="fa-solid fa-project-diagram text-[#00B4D8] text-xl w-6"></i>
+                    <div>
+                        <div class="font-semibold">Workflow Automation</div>
+                        <div class="text-xs text-slate-400">NAS, Jobs, Background processes</div>
+                    </div>
+                </div>
+
+                <!-- Tools -->
+                <div class="skill-badge bg-white border border-slate-200 px-5 py-4 rounded-3xl flex items-center gap-x-3 text-slate-700">
+                    <i class="fa-brands fa-microsoft text-[#00B4D8] text-xl w-6"></i>
+                    <span class="font-semibold">Dynamics 365 Business Central</span>
+                </div>
+                <div class="skill-badge bg-white border border-slate-200 px-5 py-4 rounded-3xl flex items-center gap-x-3 text-slate-700">
+                    <i class="fa-brands fa-microsoft text-[#00B4D8] text-xl w-6"></i>
+                    <span class="font-semibold">Dynamics NAV</span>
+                </div>
+                <div class="skill-badge bg-white border border-slate-200 px-5 py-4 rounded-3xl flex items-center gap-x-3 text-slate-700">
+                    <i class="fa-solid fa-cloud text-[#00B4D8] text-xl w-6"></i>
+                    <span class="font-semibold">Azure DevOps</span>
+                </div>
+                <div class="skill-badge bg-white border border-slate-200 px-5 py-4 rounded-3xl flex items-center gap-x-3 text-slate-700">
+                    <i class="fa-solid fa-tasks text-[#00B4D8] text-xl w-6"></i>
+                    <span class="font-semibold">JIRA & Agile</span>
+                </div>
+                <div class="skill-badge bg-white border border-slate-200 px-5 py-4 rounded-3xl flex items-center gap-x-3 text-slate-700">
+                    <i class="fa-solid fa-database text-[#00B4D8] text-xl w-6"></i>
+                    <span class="font-semibold">SQL Server / MySQL</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="max-w-5xl mx-auto px-6 py-20">
+        <div class="mb-12">
+            <h2 class="text-5xl font-semibold tracking-tighter heading-font">Professional Experience</h2>
+            <p class="mt-2 text-xl text-slate-600">Building reliable ERP solutions since 2019</p>
+        </div>
+
+        <div class="space-y-8">
+            <!-- Current Role -->
+            <div class="experience-card bg-white border border-slate-200 rounded-3xl p-8 md:p-10">
+                <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-y-4 mb-6">
+                    <div>
+                        <div class="flex items-center gap-x-3">
+                            <span class="px-4 py-1 bg-emerald-100 text-emerald-700 text-xs font-bold tracking-widest rounded-2xl">CURRENT</span>
+                            <h3 class="text-2xl font-semibold">Senior Dynamics 365 Business Central Developer</h3>
+                        </div>
+                        <p class="text-[#00B4D8] font-medium mt-1">Xtend New Media • Remote, Poland</p>
+                    </div>
+                    <div class="text-right text-sm text-slate-500 font-medium">
+                        September 2021 – Present
+                    </div>
+                </div>
+
+                <ul class="space-y-3 text-slate-600">
+                    <li class="flex gap-x-3"><i class="fa-solid fa-check text-emerald-500 mt-1.5 flex-shrink-0"></i> Led complex migrations from legacy NAV to modern Business Central environments with zero critical downtime.</li>
+                    <li class="flex gap-x-3"><i class="fa-solid fa-check text-emerald-500 mt-1.5 flex-shrink-0"></i> Designed and developed advanced automations, NAS tasks and background processes that dramatically reduced manual work.</li>
+                    <li class="flex gap-x-3"><i class="fa-solid fa-check text-emerald-500 mt-1.5 flex-shrink-0"></i> Built robust REST APIs and integrations connecting Business Central with external systems and third-party platforms.</li>
+                    <li class="flex gap-x-3"><i class="fa-solid fa-check text-emerald-500 mt-1.5 flex-shrink-0"></i> Architected and implemented sophisticated workflows and custom module extensions tailored to unique business processes.</li>
+                </ul>
+            </div>
+
+            <!-- Previous Role -->
+            <div class="experience-card bg-white border border-slate-200 rounded-3xl p-8 md:p-10">
+                <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-y-4 mb-6">
+                    <div>
+                        <h3 class="text-2xl font-semibold">Microsoft Dynamics NAV / 365 Developer</h3>
+                        <p class="text-[#00B4D8] font-medium mt-1">IT Vision • Poland</p>
+                    </div>
+                    <div class="text-right text-sm text-slate-500 font-medium">
+                        2019 – 2021
+                    </div>
+                </div>
+
+                <ul class="space-y-3 text-slate-600">
+                    <li class="flex gap-x-3"><i class="fa-solid fa-check text-emerald-500 mt-1.5 flex-shrink-0"></i> Developed and maintained complex customizations using AL and C/AL for Dynamics NAV and Business Central.</li>
+                    <li class="flex gap-x-3"><i class="fa-solid fa-check text-emerald-500 mt-1.5 flex-shrink-0"></i> Created custom reports, document layouts and new functionalities according to detailed client requirements.</li>
+                    <li class="flex gap-x-3"><i class="fa-solid fa-check text-emerald-500 mt-1.5 flex-shrink-0"></i> Provided ongoing support, troubleshooting and root-cause analysis for production Dynamics environments.</li>
+                    <li class="flex gap-x-3"><i class="fa-solid fa-check text-emerald-500 mt-1.5 flex-shrink-0"></i> Designed and implemented APIs enabling seamless data exchange between NAV and external applications.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="bg-[#0A2540] text-white py-20">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-14">
+                <h2 class="text-5xl font-semibold tracking-tighter heading-font">How I can help your business</h2>
+                <p class="mt-3 text-xl text-slate-300 max-w-lg mx-auto">Practical, production-ready solutions that solve real problems</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="service-card bg-white/5 border border-white/10 hover:border-[#00B4D8]/50 p-8 rounded-3xl">
+                    <div class="w-12 h-12 bg-[#00B4D8]/10 text-[#00B4D8] rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-exchange-alt text-2xl"></i>
+                    </div>
+                    <h4 class="font-semibold text-2xl mb-3">Business Central Migrations</h4>
+                    <p class="text-slate-300">Smooth, low-risk upgrades from Dynamics NAV to the latest version of Business Central. Full data migration, code conversion and post-go-live support.</p>
+                </div>
+
+                <div class="service-card bg-white/5 border border-white/10 hover:border-[#00B4D8]/50 p-8 rounded-3xl">
+                    <div class="w-12 h-12 bg-[#00B4D8]/10 text-[#00B4D8] rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-cogs text-2xl"></i>
+                    </div>
+                    <h4 class="font-semibold text-2xl mb-3">Custom AL Development</h4>
+                    <p class="text-slate-300">Clean, maintainable customizations and extensions. From simple fields to complex business logic and new modules built the modern way.</p>
+                </div>
+
+                <div class="service-card bg-white/5 border border-white/10 hover:border-[#00B4D8]/50 p-8 rounded-3xl">
+                    <div class="w-12 h-12 bg-[#00B4D8]/10 text-[#00B4D8] rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-project-diagram text-2xl"></i>
+                    </div>
+                    <h4 class="font-semibold text-2xl mb-3">Workflow & Automation</h4>
+                    <p class="text-slate-300">Design and implementation of powerful automated workflows, NAS tasks, job queues and background processes that save hours every week.</p>
+                </div>
+
+                <div class="service-card bg-white/5 border border-white/10 hover:border-[#00B4D8]/50 p-8 rounded-3xl">
+                    <div class="w-12 h-12 bg-[#00B4D8]/10 text-[#00B4D8] rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-plug text-2xl"></i>
+                    </div>
+                    <h4 class="font-semibold text-2xl mb-3">API Integrations</h4>
+                    <p class="text-slate-300">Connect Business Central with any external system — e-commerce, CRM, banking, logistics platforms or custom applications via modern REST APIs.</p>
+                </div>
+
+                <div class="service-card bg-white/5 border border-white/10 hover:border-[#00B4D8]/50 p-8 rounded-3xl">
+                    <div class="w-12 h-12 bg-[#00B4D8]/10 text-[#00B4D8] rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-file-alt text-2xl"></i>
+                    </div>
+                    <h4 class="font-semibold text-2xl mb-3">Reports & Documents</h4>
+                    <p class="text-slate-300">Professional report development, custom document layouts, and advanced printing solutions using the latest Business Central capabilities.</p>
+                </div>
+
+                <div class="service-card bg-white/5 border border-white/10 hover:border-[#00B4D8]/50 p-8 rounded-3xl">
+                    <div class="w-12 h-12 bg-[#00B4D8]/10 text-[#00B4D8] rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-headset text-2xl"></i>
+                    </div>
+                    <h4 class="font-semibold text-2xl mb-3">Support & Optimization</h4>
+                    <p class="text-slate-300">Ongoing maintenance, performance tuning, troubleshooting and continuous improvement of existing Business Central solutions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="max-w-3xl mx-auto px-6 py-20">
+        <div class="text-center mb-12">
+            <h2 class="text-5xl font-semibold tracking-tighter heading-font">Let's work together</h2>
+            <p class="mt-3 text-xl text-slate-600">Have a project in mind or looking for a reliable BC developer? I'd love to hear from you.</p>
+        </div>
+
+        <div class="bg-white rounded-3xl p-8 md:p-12 modern-shadow border border-slate-100">
+            <form action="https://formsubmit.co/your@email.com" method="POST" class="space-y-6" id="contact-form">
+                <!-- FormSubmit hidden fields -->
+                <input type="hidden" name="_subject" value="New inquiry from rudzinski-dev portfolio">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_template" value="table">
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-sm font-semibold text-slate-700 mb-2">Full name</label>
+                        <input type="text" name="name" required 
+                               class="w-full px-5 py-3.5 bg-slate-50 border border-slate-200 rounded-2xl focus:outline-none focus:border-[#00B4D8] transition-colors" placeholder="John Smith">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold text-slate-700 mb-2">Email address</label>
+                        <input type="email" name="email" required 
+                               class="w-full px-5 py-3.5 bg-slate-50 border border-slate-200 rounded-2xl focus:outline-none focus:border-[#00B4D8] transition-colors" placeholder="john@company.com">
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-semibold text-slate-700 mb-2">What are you looking for?</label>
+                    <select name="subject" class="w-full px-5 py-3.5 bg-slate-50 border border-slate-200 rounded-2xl focus:outline-none focus:border-[#00B4D8] transition-colors text-slate-700">
+                        <option>Business Central migration or upgrade</option>
+                        <option>Custom development / new features</option>
+                        <option>API integration or automation project</option>
+                        <option>Ongoing support or optimization</option>
+                        <option>Other collaboration</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-semibold text-slate-700 mb-2">Message</label>
+                    <textarea name="message" rows="6" required 
+                              class="w-full px-5 py-3.5 bg-slate-50 border border-slate-200 rounded-3xl focus:outline-none focus:border-[#00B4D8] transition-colors resize-y" 
+                              placeholder="Tell me about your project, timeline, or how I can help..."></textarea>
+                </div>
+
+                <button type="submit" 
+                        class="w-full md:w-auto px-10 py-4 bg-[#0A2540] hover:bg-[#1a365d] transition-colors text-white font-semibold rounded-3xl flex items-center justify-center gap-x-3 text-lg">
+                    <span>Send message</span>
+                    <i class="fa-solid fa-paper-plane"></i>
+                </button>
+
+                <p class="text-xs text-center text-slate-500 pt-2">Your message will be sent directly to my inbox. I usually reply within 24 hours.</p>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-12">
+        <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-y-6 text-sm">
+            <div>
+                © 2026 Michał Rudziński. All rights reserved.
+            </div>
+            <div class="flex gap-x-8">
+                <a href="#" class="hover:text-white transition-colors">LinkedIn</a>
+                <a href="https://github.com/aether-central/rudzinski-dev" class="hover:text-white transition-colors">GitHub</a>
+                <a href="#contact" class="hover:text-white transition-colors">Email me</a>
+            </div>
+            <div class="text-xs">
+                Built with clean code & modern tools
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Tailwind script
+        function initializeTailwind() {
+            document.documentElement.style.setProperty('--accent', '#00B4D8');
+        }
+
+        // Mobile menu
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            const icon = mobileBtn.querySelector('i');
+            if (mobileMenu.classList.contains('hidden')) {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            } else {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            }
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    e.preventDefault();
+                    const offset = 80;
+                    const bodyRect = document.body.getBoundingClientRect().top;
+                    const elementPosition = target.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition - bodyRect - offset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+
+                    // Close mobile menu if open
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                        mobileBtn.querySelector('i').classList.remove('fa-times');
+                        mobileBtn.querySelector('i').classList.add('fa-bars');
+                    }
+                }
+            });
+        });
+
+        // Contact form handling (FormSubmit will handle the actual sending)
+        const contactForm = document.getElementById('contact-form');
+        contactForm.addEventListener('submit', function(e) {
+            const btn = this.querySelector('button[type="submit"]');
+            const originalText = btn.innerHTML;
+            
+            btn.innerHTML = `<span>Sending...</span> <i class="fa-solid fa-spinner fa-spin"></i>`;
+            btn.disabled = true;
+
+            // FormSubmit will redirect or show success page by default.
+            // For better UX we can show a local thank you message after short delay
+            setTimeout(() => {
+                // The form will actually submit to FormSubmit
+                // We just improve perceived performance
+            }, 800);
+        });
+
+        // Initialize everything
+        initializeTailwind();
+
+        // Optional: Update placeholder email in form comment
+        console.log('%c[Portfolio] Ready. Replace "your@email.com" in the form action with your real email address.', 'color:#64748b');
+    </script>
+</body>
+</html>
